@@ -1,6 +1,7 @@
 import MainPage from "../components/MainPage/MainPage";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Navbar from "../components/Navbar/Navbar";
 
 function Home() {
 	const [quote, setQuote] = useState(null);
@@ -12,19 +13,10 @@ function Home() {
 
 	return (
 		<>
+			<Navbar />
 			<MainPage quote={quote} />
 		</>
 	);
 }
 
 export default Home;
-// {props.map((q) => {
-// 	console.log(q);
-// 	return (
-// 		<>
-// 			{/* <h3>{q.date}</h3>
-// 			<h3>{q.quote}</h3>
-// 			<p>{q.author}</p> */}
-// 		</>
-// 	);
-// })}

@@ -1,0 +1,54 @@
+@import url(../../App.scss);
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	// height: 50px;
+	padding-top: 15px;
+	padding-bottom: 20px;
+
+	// background-color: rgb(200, 219, 219);
+	// border-radius: 20px;
+	// color: white;
+
+	&__heading {
+		text-decoration: none;
+		color: Black;
+		// color: white;
+		font-family: NanumExtraBold;
+		margin-left: -180px;
+		font-size: 30px;
+		// color: white;
+	}
+
+	// &__heading:hover,
+	// &__sub-heading:hover {
+	// 	color: black;
+	// }
+
+	&__sub-heading {
+		text-decoration: none;
+		color: Black;
+		// color: white;
+		font-family: NanumBold;
+		font-size: 18px;
+		margin-left: 50px;
+		// color: white;
+	}
+
+	&__flex-left {
+		margin-left: 0px;
+		// display: flex;
+		// justify-content: space-between;
+	}
+
+	&__div {
+		margin-right: 50px;
+	}
+}
+
+.navbar:hover {
+	// background-color: rgb(207, 185, 151);
+	background-color: rgb(208, 198, 185);
+	// color: black;
+}

@@ -1,11 +1,3 @@
-import Welcome from "../components/Welcome/Welcome";
-
-function WelcomePage() {
-	return (
-		<>
-			<Welcome />
-		</>
-	);
-}
+function WelcomePage(props) {}
 
 export default WelcomePage;

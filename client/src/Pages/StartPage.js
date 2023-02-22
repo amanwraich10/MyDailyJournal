@@ -1,11 +1,12 @@
-import Start from "../components/Start/Start";
+import { useState } from "react";
 
-function Home() {
-	return (
-		<>
-			<Start />
-		</>
-	);
-}
+import axios from "axios";
+import AccountCreate from "../components/AccountCreate/AccountCreate";
 
-export default Home;
+const baseUrl = "http://localhost:8080";
+const loginUrl = `${baseUrl}/login`;
+const signupUrl = `${baseUrl}/signup`;
+
+function StartPage() {}
+
+export default StartPage;

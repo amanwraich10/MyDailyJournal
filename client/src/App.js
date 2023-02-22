@@ -1,21 +1,26 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.scss";
 import CreateAccount from "./Pages/CreateAccount";
-import Login from "./Pages/Login";
-// import MainPage from "./components/MainPage/MainPage";
 import StartPage from "./Pages/StartPage";
 import Home from "./Pages/Home";
 import WelcomePage from "./Pages/WelcomePage";
+import { useState, useEffect } from "react";
+import { Navigate } from "react-router-dom";
+import axios from "axios";
+import AccountLogin from "./components/AccountLogin/AccountLogin";
+import Quotes from "./Pages/Quotes";
+import Entries from "./Pages/Entries";
+import CalenderPage from "./Pages/CalenderPage";
 
 function App() {
 	return (
 		<>
 			<BrowserRouter>
 				<Routes>
-					<Route path="/" element={<StartPage />} />
-					<Route path="/create-account" element={<CreateAccount />} />
-					<Route path="/login" element={<Login />} />
-					<Route path="/journal" element={<Home />} />
-					<Route path="/welcome" element={<WelcomePage />} />
+					<Route path="/" element={<Home />} />
+					<Route path="/liked-quotes" element={<Quotes />} />
+					<Route path="/all-entries" element={<Entries />} />
+					<Route path="/calender" element={<CalenderPage />} />
 				</Routes>
 			</BrowserRouter>
 		</>
