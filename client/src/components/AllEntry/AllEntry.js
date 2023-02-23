@@ -1,9 +1,18 @@
 import "../AllEntry/AllEntry.scss";
 
-function AllEntry() {
+function AllEntry(props) {
 	return (
 		<>
-			<h1>All Entries</h1>
+			{props.entries?.map((entry) => {
+				return (
+					<div key={entry.id}>
+						<p>{entry.Answer_1}</p>
+						<p>{entry.Answer_2}</p>
+						<p>{entry.Answer_3}</p>
+						<p>{entry.title}</p>
+					</div>
+				);
+			})}
 		</>
 	);
 }
