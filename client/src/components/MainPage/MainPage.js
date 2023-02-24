@@ -5,6 +5,12 @@ import axios from "axios";
 function MainPage(props) {
 	const [entry, setEntry] = useState({});
 
+	function ClickLikeButton(e) {
+		e.preventDefault();
+		console.log("hello");
+		console.log(e.target);
+	}
+
 	function UploadEntryInfo(e) {
 		e.preventDefault();
 
@@ -51,6 +57,7 @@ function MainPage(props) {
 							<p className="mainpage__author">
 								- {quotes.author}
 							</p>
+							<button onClick={ClickLikeButton}>LIKE</button>
 						</div>
 						<div className="mainpage__journal">
 							<div className="mainpage__card">
