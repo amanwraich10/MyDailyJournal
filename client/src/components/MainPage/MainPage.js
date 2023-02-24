@@ -2,13 +2,20 @@ import "../MainPage/MainPage.scss";
 import { NavLink, Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 function MainPage(props) {
 	const [entry, setEntry] = useState({});
 
+	// PROBLEM - issue with accessing text
+
 	function ClickLikeButton(e) {
 		e.preventDefault();
-		console.log("hello");
-		console.log(e.target);
+
+		let text = document.querySelector(".mainpage__quote").innerText;
+		axios
+			.post("http://localhost:8082/entries/liked-quotes", text)
+			.then(alert("Liked Quote"));
 	}
 
 	function UploadEntryInfo(e) {
@@ -51,13 +58,14 @@ function MainPage(props) {
 					<div className="mainpage" key={quotes.id}>
 						<div key={quotes.id} className="mainpage__div">
 							<h3 className="mainpage__date">{quotes.date}</h3>
-							<h3 className="mainpage__quote">
-								" {quotes.quote} "
-							</h3>
+							<h3 className="mainpage__quote">{quotes.quote}</h3>
 							<p className="mainpage__author">
 								- {quotes.author}
 							</p>
+
 							<button onClick={ClickLikeButton}>LIKE</button>
+
+							{/* <button onClick={ClickLikeButton}>LIKE</button> */}
 						</div>
 						<div className="mainpage__journal">
 							<div className="mainpage__card">

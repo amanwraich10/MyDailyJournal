@@ -1,3 +1,5 @@
+const { json } = require("body-parser");
+const bodyParser = require("body-parser");
 const express = require("express");
 
 const app = express();
@@ -6,7 +8,14 @@ const fs = require("fs");
 const uuid = require("uuid").v4;
 app.use(express.json());
 
+let codedParser = bodyParser.urlencoded({ extended: true });
+app.use(bodyParser.json());
+app.use(codedParser);
+router.use(bodyParser.json());
+app.use(express.urlencoded({ extended: false }));
+
 const entriesFile = "./data/entries.json";
+const quotesFile = "./data/quotes.json";
 
 function oldEntries() {
 	let entries = fs.readFileSync(entriesFile);
@@ -38,6 +47,40 @@ router.post("/add", (req, res) => {
 	};
 	newEntry(entry);
 	res.status(201).send("Entry added successfully");
+});
+
+function oldQuote() {
+	let quotes = fs.readFileSync(quotesFile);
+	let parsedData = JSON.parse(quotes);
+	return parsedData;
+}
+
+function newQuotes(quote) {
+	const quotes = quote;
+	const oldQ = oldQuote();
+	const all = [...oldQ, quotes];
+	fs.writeFileSync(quotesFile, JSON.stringify(all));
+}
+
+// problem - having issue with req.headers
+
+router.post("/liked-quotes", codedParser, (req, res) => {
+	const text = JSON.parse(JSON.stringify(req.body));
+	// const text = JSON.stringify(req.body);
+
+	const quote = {
+		id: uuid(),
+		text: text,
+	};
+	// console.log(quote);
+	// console.log(req.headers);
+	newQuotes(quote);
+	res.status(201).send("Liked Quote");
+});
+
+router.get("/quotes", (req, res) => {
+	let quotes = oldQuote();
+	res.json(quotes);
 });
 
 router.get("/:entryId", (req, res) => {
