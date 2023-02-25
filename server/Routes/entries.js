@@ -38,6 +38,7 @@ router.get("/", (req, res) => {
 router.post("/add", (req, res) => {
 	const entry = {
 		id: uuid(),
+		date: Date.now(),
 		// Question_1: "What is the most important task for today?",
 		Answer_1: req.body.Answer_1,
 		// Question_2: "What are you looking forward to today?",

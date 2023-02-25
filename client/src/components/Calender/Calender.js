@@ -1,11 +1,12 @@
-import "../Calender/Calender.scss";
+// import "../Calender/Calender.scss";
 
-function Calender() {
-	return (
-		<>
-			<h1>Calender</h1>
-		</>
-	);
-}
+// function CalenderP(props) {
+// 	console.log(props);
+// 	return (
+// 		<>
+// 			<h1>calkajds</h1>
+// 		</>
+// 	);
+// }
 
-export default Calender;
+// export default CalenderP;

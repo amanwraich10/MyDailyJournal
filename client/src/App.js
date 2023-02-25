@@ -11,6 +11,7 @@ import AccountLogin from "./components/AccountLogin/AccountLogin";
 import Quotes from "./Pages/Quotes";
 import Entries from "./Pages/Entries";
 import CalenderPage from "./Pages/CalenderPage";
+import "react-calendar/dist/Calendar.css";
 
 function App() {
 	return (
