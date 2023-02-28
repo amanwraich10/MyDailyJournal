@@ -1,1 +1,19 @@
 @import url(../../App.scss);
+
+.allentries {
+	&__heading {
+		// width: 100px;
+		font-family: NanumExtraBold;
+		font-size: 40px;
+		// margin: auto;
+		text-align: center;
+	}
+
+	&__div {
+		width: 350px;
+		padding: 20px;
+		background-color: rgb(208, 198, 185);
+		border: 3px black solid;
+		// margin: 50px auto;
+	}
+}

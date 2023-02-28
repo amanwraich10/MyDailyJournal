@@ -15,6 +15,7 @@
 	&__date {
 		text-align: center;
 		padding-top: 50px;
+		font-size: 30px;
 		// color: white;
 	}
 
@@ -24,12 +25,25 @@
 		margin: auto;
 		font-family: NanumExtraBold;
 		font-size: 35px;
+		// color: white;
 		// color: rgb(106, 39, 39);
 	}
 
 	&__author {
 		text-align: center;
+		font-size: 30px;
 		// color: white;
+	}
+	&__like-button {
+		height: 50px;
+		width: 100px;
+		font-family: NanumExtraBold;
+		font-size: 30px;
+		margin-left: 675px;
+		margin-bottom: 20px;
+		background-color: rgb(208, 198, 185);
+		// display: block;
+		// font
 	}
 
 	&__button {
@@ -59,6 +73,26 @@
 		perspective: 600px;
 	}
 
+	&__questions {
+		font-size: 20px;
+	}
+
+	&__save-button {
+		display: block;
+		margin: 20px auto;
+		height: 50px;
+		width: 100px;
+		background-color: rgb(208, 198, 185);
+		font-family: NanumExtraBold;
+		font-size: 30px;
+
+		// width: 200px;
+	}
+
+	&__review {
+		font-size: 40px;
+	}
+
 	// &__card {
 	// 	position: relative;
 	// 	width: 100%;
@@ -73,17 +107,17 @@
 	// 	transform: translateX(-100%) rotateY(-180deg);
 	// }
 
-	&__form {
-		// position: absolute;
-		// width: 100%;
-		// height: 100%;
-		// line-height: 260px;
-		// color: white;
-		// text-align: center;
-		// font-weight: bold;
-		// font-size: 40px;
-		// backface-visibility: hidden;
-	}
+	// &__form {
+	// 	// position: absolute;
+	// 	// width: 100%;
+	// 	// height: 100%;
+	// 	// line-height: 260px;
+	// 	// color: white;
+	// 	// text-align: center;
+	// 	// font-weight: bold;
+	// 	// font-size: 40px;
+	// 	// backface-visibility: hidden;
+	// }
 }
 
 // .second {

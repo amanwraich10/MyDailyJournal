@@ -1,1 +1,30 @@
 @import url(../../App.scss);
+
+.likedquotes {
+	&__heading {
+		font-size: 40px;
+		// color: white;
+		// margin-left: 520px;
+		text-align: center;
+	}
+
+	&__div {
+		// height: 200px;
+		width: 800px;
+		padding: 20px;
+		background-color: rgb(208, 198, 185);
+		border: 3px black solid;
+		margin: 50px auto;
+	}
+}
+
+.entries__like-button {
+	height: 50px;
+	width: 140px;
+	font-family: NanumExtraBold;
+	font-size: 30px;
+	margin-left: 25px;
+	margin-top: 20px;
+	// margin-bottom: 20px;
+	background-color: rgb(208, 198, 185);
+}

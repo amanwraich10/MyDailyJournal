@@ -13,8 +13,12 @@ function MainPage(props) {
 		e.preventDefault();
 
 		let text = document.querySelector(".mainpage__quote").innerText;
+		const requestBody = { text: text };
+
+		// const rb = requestBody.text;
+		// console.log(rb);
 		axios
-			.post("http://localhost:8082/entries/liked-quotes", text)
+			.post("http://localhost:8082/entries/liked-quotes", requestBody)
 			.then(alert("Liked Quote"));
 	}
 
@@ -39,7 +43,28 @@ function MainPage(props) {
 					console.log(err);
 				});
 		} else {
-			alert("You must fill all areas.");
+			alert("H You must fill all areas.");
+		}
+	}
+
+	function UploadReview(e) {
+		e.preventDefault();
+		const uploadEntryReview = {
+			Answer_review_1: entry.Answer_review_1,
+			Answer_review_2: entry.Answer_review_2,
+		};
+		if (
+			uploadEntryReview.Answer_review_1 &&
+			uploadEntryReview.Answer_review_2
+		) {
+			axios
+				.post("http://localhost:8082/entries/review", uploadEntryReview)
+				.then(alert("Upload Successful"))
+				.catch((err) => {
+					console.log(err);
+				});
+		} else {
+			alert(" R You must fill all areas.");
 		}
 	}
 
@@ -63,69 +88,82 @@ function MainPage(props) {
 								- {quotes.author}
 							</p>
 
-							<button onClick={ClickLikeButton}>LIKE</button>
+							<button
+								className="mainpage__like-button"
+								onClick={ClickLikeButton}
+							>
+								LIKE
+							</button>
 
 							{/* <button onClick={ClickLikeButton}>LIKE</button> */}
 						</div>
 						<div className="mainpage__journal">
 							<div className="mainpage__card">
 								<form className="mainpage__first">
-									<p>
+									<p className="mainpage__questions">
 										What is the most important task for
 										today?
 									</p>
 									<input
+										className="mainpage__input"
 										name="Answer_1"
 										onChange={input}
 									></input>
-									<div>
-										<button>Edit</button>
-										<button>Delete</button>
-									</div>
-									<p>
+
+									<p className="mainpage__questions">
 										What are you looking forward to today?
 									</p>
 									<input
+										className="mainpage__input"
 										name="Answer_2"
 										onChange={input}
 									></input>
-									<div>
-										<button>Edit</button>
-										<button>Delete</button>
-									</div>
-									<p>Daily Affirmations</p>
+
+									<p className="mainpage__questions">
+										Daily Affirmations
+									</p>
 									<input
+										className="mainpage__input"
 										name="Answer_3"
 										onChange={input}
 									></input>
-									<div>
-										<button>Edit</button>
-										<button>Delete</button>
-									</div>
 
-									<button onClick={UploadEntryInfo}>
+									<button
+										className="mainpage__save-button"
+										onClick={UploadEntryInfo}
+									>
 										SAVE
 									</button>
 								</form>
 								<form className="mainpage__second">
-									<h2>Review of the day</h2>
-									<p>
+									<h2 className="mainpage__review">
+										Review of the day
+									</h2>
+									<p className="mainpage__questions">
 										What is something you wish to have done
 										differently?
 									</p>
-									<textarea></textarea>
-									<div>
-										<button>Edit</button>
-										<button>Delete</button>
-									</div>
+									<input
+										className="mainpage__input"
+										name="Answer_review_1"
+										onChange={input}
+									></input>
 
-									<p>What did you learn today?</p>
-									<textarea></textarea>
-									<div>
-										<button>Edit</button>
-										<button>Delete</button>
-									</div>
-									<button>SAVE</button>
+									<p className="mainpage__questions">
+										What did you learn today?
+									</p>
+									<input
+										className="mainpage__input"
+										name="Answer_review_2"
+										onChange={input}
+									></input>
+
+									<button
+										className="mainpage__save-button"
+										onClick={UploadReview}
+									>
+										SAVE
+									</button>
 								</form>
 							</div>
 						</div>

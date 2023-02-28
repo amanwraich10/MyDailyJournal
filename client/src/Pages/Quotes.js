@@ -4,19 +4,21 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 function Quotes() {
-	// const config = {
-	// 	headers: {
-	// 		// accept: "application/json",
-	// 		// Accept: "application/json",
-	// 		"Content-Type": "application/json",
-	// 	},
-	// 	// data: {},
-	// };
+	const config = {
+		headers: {
+			// accept: "application/json",
+			// Accept: "application/json",
+			"Content-Type": "application/json",
+		},
+	};
 	const [quote, setQuote] = useState(null);
 	useEffect(() => {
 		axios
-			.get("http://localhost:8082/entries/quotes")
-			.then((res) => setQuote(res.data));
+			.get("http://localhost:8082/entries/quotes", config)
+			.then((res) => {
+				// console.log(res.data);
+				setQuote(res.data);
+			});
 	}, []);
 
 	// console.log("hello");
