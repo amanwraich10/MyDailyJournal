@@ -16,9 +16,16 @@ function CalendarPage() {
 		});
 	}, []);
 
+	const [entriesRev, setEntriesRev] = useState(null);
+	useEffect(() => {
+		axios.get("http://localhost:8082/entriesrev").then((res) => {
+			setEntriesRev(res.data);
+		});
+	}, []);
+
 	const clicked_Date = dates.toDateString();
-	// const isClicked = clicked_Date === dates.toDateString();
 	let noEntriesFound = false;
+	let noRevEntriesFound = false;
 	return (
 		<>
 			<Navbar />
@@ -44,6 +51,32 @@ function CalendarPage() {
 				} else {
 					if (noEntriesFound === false) {
 						noEntriesFound = true;
+						return (
+							<div key={entry.id}>
+								<p>no</p>
+							</div>
+						);
+					}
+				}
+			})}
+			{entriesRev?.map((entry) => {
+				const d = entry.date;
+				const fd = new Date(d);
+				const final_Entry_Date = fd.toDateString();
+
+				if (final_Entry_Date === clicked_Date) {
+					return (
+						<div key={entry.id}>
+							<p>{final_Entry_Date}</p>
+							<p>{entry.Question_review_1}</p>
+							<p>{entry.Answer_review_1}</p>
+							<p>{entry.Question_review_2}</p>
+							<p>{entry.Answer_review_2}</p>
+						</div>
+					);
+				} else {
+					if (noRevEntriesFound === false) {
+						noRevEntriesFound = true;
 						return (
 							<div key={entry.id}>
 								<p>no</p>
