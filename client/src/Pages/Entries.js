@@ -10,13 +10,13 @@ function Entries() {
 	useEffect(() => {
 		axios.get("http://localhost:8082/entries").then((res) => {
 			setEntries(res.data);
-			// console.log(res.data);
+			console.log(res.data);
 		});
 	}, []);
 	useEffect(() => {
-		axios.get("http://localhost:8082/entries/rev").then((res) => {
+		axios.get("http://localhost:8082/entriesrev").then((res) => {
 			setEntriesRev(res.data);
-			// console.log(res.data);
+			console.log(res);
 		});
 	}, []);
 

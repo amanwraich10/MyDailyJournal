@@ -41,10 +41,7 @@ function EditReviewEntry() {
 		// console.log(toSubmitData);
 
 		axios
-			.put(
-				`http://localhost:8082/entries/rev/${entryRevId}`,
-				toSubmitData
-			)
+			.put(`http://localhost:8082/entriesrev/${entryRevId}`, toSubmitData)
 			.then((res) => {
 				// console.log(toSubmitData);
 				// console.log(res);
@@ -59,7 +56,7 @@ function EditReviewEntry() {
 
 	const loadEntry = () => {
 		axios
-			.get(`http://localhost:8082/entries/rev/${entryRevId}`)
+			.get(`http://localhost:8082/entriesrev/${entryRevId}`)
 			.then((res) => {
 				const entryData = {
 					date: res.data.date,

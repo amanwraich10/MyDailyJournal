@@ -9,10 +9,10 @@ function DeleteEntryPage() {
 
 	// let navigate = useNavigate();
 	let { entryId } = useParams();
+	// console.log(entryId);
 	useEffect(() => {
 		axios.get(`http://localhost:8082/entries/${entryId}`).then((res) => {
-			console.log(res.data.id);
-			setDelEntry(res.data.id);
+			setDelEntry(res.data[0].id);
 		});
 	}, [entryId]);
 	return (

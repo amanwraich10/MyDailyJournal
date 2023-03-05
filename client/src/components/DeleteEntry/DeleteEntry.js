@@ -7,10 +7,12 @@ import { useNavigate } from "react-router-dom";
 import "../DeleteEntry/DeleteEntry.scss";
 
 function DeleteEntry(props) {
+	console.log(props.delEntry);
 	let navigate = useNavigate();
 	const idToDelete = props.delEntry;
 	// console.log(idToDelete);
 	const deleteEnt = async (idToDelete) => {
+		// console.log(idToDelete);
 		await axios.delete(`http://localhost:8082/entries/${idToDelete}`);
 		navigate("/all-entries");
 		// props.setModalActive(false);
@@ -24,7 +26,7 @@ function DeleteEntry(props) {
 			<div className="del__div">
 				{/* <Link to="/all-entries"> */}
 				<button
-					className="likedquotes__b "
+					className="likedquotes__b"
 					onClick={() => {
 						deleteEnt(idToDelete);
 					}}
@@ -34,7 +36,7 @@ function DeleteEntry(props) {
 				{/* </Link> */}
 
 				<Link to="/all-entries">
-					<button className="likedquotes__b ">NO</button>
+					<button className="likedquotes__b">NO</button>
 				</Link>
 			</div>
 		</>

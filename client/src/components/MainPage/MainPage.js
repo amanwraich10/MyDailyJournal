@@ -58,7 +58,10 @@ function MainPage(props) {
 			uploadEntryReview.Answer_review_2
 		) {
 			axios
-				.post("http://localhost:8082/entries/review", uploadEntryReview)
+				.post(
+					"http://localhost:8082/entriesrev/review",
+					uploadEntryReview
+				)
 				.then(alert("Upload Successful"))
 				.catch((err) => {
 					console.log(err);

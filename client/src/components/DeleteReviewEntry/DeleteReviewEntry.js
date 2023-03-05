@@ -10,7 +10,7 @@ function DeleteReviewEntry(props) {
 	const idToDelete = props.delRevEntry;
 	// console.log(idToDelete);
 	const deleteRevEnt = async (idToDelete) => {
-		await axios.delete(`http://localhost:8082/entries/rev/${idToDelete}`);
+		await axios.delete(`http://localhost:8082/entriesrev/${idToDelete}`);
 		navigate("/all-entries");
 		// props.setModalActive(false);
 	};

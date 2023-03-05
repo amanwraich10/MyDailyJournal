@@ -18,11 +18,12 @@ function CalendarPage() {
 
 	const clicked_Date = dates.toDateString();
 	// const isClicked = clicked_Date === dates.toDateString();
-
+	let noEntriesFound = false;
 	return (
 		<>
 			<Navbar />
 			<Calendar calendarType="US" onChange={onChange} value={dates} />
+
 			{entries?.map((entry) => {
 				const d = entry.date;
 				const fd = new Date(d);
@@ -41,11 +42,14 @@ function CalendarPage() {
 						</div>
 					);
 				} else {
-					return (
-						<div key={entry.id}>
-							<p>no</p>
-						</div>
-					);
+					if (noEntriesFound === false) {
+						noEntriesFound = true;
+						return (
+							<div key={entry.id}>
+								<p>no</p>
+							</div>
+						);
+					}
 				}
 			})}
 		</>

@@ -13,12 +13,10 @@ function Quotes() {
 	};
 	const [quote, setQuote] = useState(null);
 	useEffect(() => {
-		axios
-			.get("http://localhost:8082/entries/quotes", config)
-			.then((res) => {
-				// console.log(res.data);
-				setQuote(res.data);
-			});
+		axios.get("http://localhost:8082/quotes", config).then((res) => {
+			// console.log(res.data);
+			setQuote(res.data);
+		});
 	}, []);
 
 	// console.log("hello");

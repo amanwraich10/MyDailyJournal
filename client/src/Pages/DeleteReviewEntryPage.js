@@ -10,7 +10,7 @@ function DeleteReviewEntryPage() {
 	let { entryRevId } = useParams();
 	useEffect(() => {
 		axios
-			.get(`http://localhost:8082/entries/rev/${entryRevId}`)
+			.get(`http://localhost:8082/entriesrev/${entryRevId}`)
 			.then((res) => {
 				// console.log(res.data.id);
 				setDelRevEntry(res.data.id);
