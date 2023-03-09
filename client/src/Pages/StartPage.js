@@ -1,12 +1,13 @@
-import { useState } from "react";
+import Navbar from "../components/Navbar/Navbar";
 
-import axios from "axios";
-import AccountCreate from "../components/AccountCreate/AccountCreate";
-
-const baseUrl = "http://localhost:8080";
-const loginUrl = `${baseUrl}/login`;
-const signupUrl = `${baseUrl}/signup`;
-
-function StartPage() {}
+function StartPage() {
+	return (
+		<section>
+			<Navbar />
+			<h1>Welcome to BrainFeed!</h1>
+			<p>Your go to source for all things dev related.</p>
+		</section>
+	);
+}
 
 export default StartPage;

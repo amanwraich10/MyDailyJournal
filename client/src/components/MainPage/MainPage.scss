@@ -1,125 +1,139 @@
 @import url(../../App.scss);
 
 .mainpage {
-	// background-image: url(../../Assets/images/patrick-langwallner-3pR7d-tIRx8-unsplash.jpg);
-	// background-color: rgb(241, 244, 246);
-	// background-position: center;
-	// background-size: cover;
-	// background-color: rgb(220, 217, 217);
 	height: auto;
-	// margin-top: -100px;
-	// border-radius: 30px;
-	// color: white;
-	// opacity: 70%;
+	color: rgb(47, 17, 17);
 
+	&__div {
+		border-top: 2px solid rgb(47, 17, 17);
+		border-bottom: 2px solid rgb(47, 17, 17);
+		width: 80%;
+		// height: 20px;
+		margin: 100px auto;
+		padding: 0px;
+	}
 	&__date {
 		text-align: center;
-		padding-top: 50px;
+		font-family: NanumBold;
+		// padding-top: 50px;
+		margin: 20px auto;
 		font-size: 30px;
-		// color: white;
 	}
 
 	&__quote {
 		text-align: center;
-		width: 1000px;
-		margin: auto;
+		// width: 1000px;
+		// margin: auto;
 		font-family: NanumExtraBold;
 		font-size: 35px;
-		// color: white;
-		// color: rgb(106, 39, 39);
 	}
 
 	&__author {
 		text-align: center;
 		font-size: 30px;
-		// color: white;
+		margin: 0px;
+		font-family: NanumBold;
 	}
 	&__like-button {
-		height: 50px;
-		width: 100px;
+		// height: 50px;
+		// width: 100px;
 		font-family: NanumExtraBold;
-		font-size: 30px;
-		margin-left: 675px;
-		margin-bottom: 20px;
+		font-size: 25px;
+		margin: 40px 530px;
+		// margin-left: 675px;
+		// margin-bottom: 20px;
 		background-color: rgb(208, 198, 185);
-		// display: block;
-		// font
+		box-shadow: 5px 5px 5px rgb(97, 92, 92);
+		border: 2px solid rgb(47, 17, 17);
+		padding: 10px 20px 10px 20px;
+		border-radius: 10px;
 	}
 
-	&__button {
-		// text-align: center;
-		margin-left: 600px;
-		height: 50px;
-		width: 200px;
-		// border-radius: 12px;
-		// color: white;
-	}
+	// &__card {
+	// 	display: flex;
+	// 	justify-content: space-evenly;
+	// }
+
+	// &__button {
+	// 	margin-left: 600px;
+	// 	height: 50px;
+	// 	width: 200px;
+	// }
 
 	&__first {
-		border: 3px black solid;
-		width: 400px;
-		margin: auto;
+		font-family: NanumBold;
+		// border: 2px solid rgb(47, 17, 17);
+		padding: 20px;
+		border-radius: 20px;
+		box-shadow: 5px 5px 5px rgb(97, 92, 92);
+		width: 700px;
+		margin: 100px auto;
 		text-align: center;
 		background-color: rgb(208, 198, 185);
-		perspective: 600px;
+		// perspective: 600px;
 	}
 
 	&__second {
-		border: 3px black solid;
-		width: 400px;
-		margin: 20px auto;
+		font-family: NanumBold;
+		padding: 20px;
+		// border: 2px solid rgb(47, 17, 17);
+		border-radius: 20px;
+		box-shadow: 5px 5px 5px rgb(97, 92, 92);
+		// border: 3px black solid;
+		width: 700px;
+		margin: 100px auto;
 		text-align: center;
 		background-color: rgb(208, 198, 185);
-		perspective: 600px;
+		// perspective: 600px;
 	}
 
 	&__questions {
-		font-size: 20px;
+		font-size: 25px;
 	}
 
 	&__save-button {
-		display: block;
-		margin: 20px auto;
-		height: 50px;
-		width: 100px;
-		background-color: rgb(208, 198, 185);
+		// height: 50px;
+		// width: 100px;
 		font-family: NanumExtraBold;
-		font-size: 30px;
-
-		// width: 200px;
+		font-size: 25px;
+		display: block;
+		margin: 30px auto;
+		// margin: 20px 530px;
+		// margin-left: 675px;
+		// margin-bottom: 20px;
+		background-color: rgb(208, 198, 185);
+		box-shadow: 5px 5px 5px rgb(97, 92, 92);
+		border: 2px solid rgb(47, 17, 17);
+		padding: 10px 20px 10px 20px;
+		border-radius: 10px;
 	}
 
 	&__review {
 		font-size: 40px;
+		// border-bottom: 2px solid black;
 	}
 
-	// &__card {
-	// 	position: relative;
-	// 	width: 100%;
-	// 	height: 100%;
-	// 	cursor: pointer;
-	// 	transform-style: preserve-3d;
-	// 	// transform-origin: center right;
-	// 	// transition: transform 1s;
-	// }
-
-	// &__card.is-flipped {
-	// 	transform: translateX(-100%) rotateY(-180deg);
-	// }
-
-	// &__form {
-	// 	// position: absolute;
-	// 	// width: 100%;
-	// 	// height: 100%;
-	// 	// line-height: 260px;
-	// 	// color: white;
-	// 	// text-align: center;
-	// 	// font-weight: bold;
-	// 	// font-size: 40px;
-	// 	// backface-visibility: hidden;
-	// }
+	&__input {
+		border: none;
+		border-bottom: 2px solid black;
+		// background-color: rgb(231, 221, 211);
+		background-color: rgb(208, 198, 185);
+		width: 90%;
+		height: 40px;
+		// border-radius: 10px;
+		font-size: 15px;
+	}
 }
 
-// .second {
-// 	transform: rotateY(180deg);
-// }
+.calender__text {
+	font-size: 25px;
+	font-family: NanumExtraBold;
+	border-bottom: 2px solid black;
+	width: 400px;
+	text-align: center;
+	margin: 50px auto;
+	padding: 20px;
+	box-shadow: 5px 5px 5px rgb(97, 92, 92);
+	border-radius: 10px;
+	background-color: rgb(208, 198, 185);
+}

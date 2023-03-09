@@ -2,55 +2,63 @@
 
 .navbar {
 	display: flex;
-	justify-content: space-between;
-	// height: 50px;
+	justify-content: flex-end;
 	padding-top: 15px;
-	padding-bottom: 20px;
-
-	// background-color: rgb(200, 219, 219);
-	// border-radius: 20px;
-	// color: white;
+	padding-bottom: 30px;
+	height: 25px;
+	background-color: rgb(208, 198, 185);
 
 	&__heading {
 		text-decoration: none;
-		color: Black;
-		// color: rgb(106, 39, 39);
-		// color: white;
+		// color: Black;
+		color: rgb(47, 17, 17);
 		font-family: NanumExtraBold;
-		margin-left: -180px;
+		// margin: auto;
+		// text-align: center;
+		// margin-left: -180px;
 		font-size: 30px;
-		// color: white;
-	}
+		position: absolute;
+		// // left: 200px;
+		left: 50px;
 
-	// &__heading:hover,
-	// &__sub-heading:hover {
-	// 	color: black;
-	// }
+		// position: fixed;
+	}
 
 	&__sub-heading {
 		text-decoration: none;
-		color: Black;
-		// color: rgb(106, 39, 39);
-		// color: white;
+		// color: Black;
+		color: rgb(129, 91, 91);
 		font-family: NanumBold;
 		font-size: 18px;
+		position: relative;
+		top: 10px;
 		margin-left: 50px;
-		// color: white;
+		transition: 0.2s all;
+		// transition: 0.5s ease;
+	}
+
+	&__sub-heading:hover {
+		color: rgb(92, 28, 28);
+		font-size: 18px;
+		font-family: NanumBold;
+		padding-bottom: 2px;
+		border-bottom: 2px solid rgb(92, 28, 28);
+	}
+	&__sub-heading.active {
+		color: rgb(47, 17, 17);
+
+		box-shadow: 5px 5px 5px rgb(97, 92, 92);
+		// box-shadow: 5px 5px 5px rgb(93, 88, 88);
+
+		// box-shadow: 5px 5px 5px rgb(47, 17, 17);
+
+		border: 2px solid rgb(47, 17, 17);
+		padding: 10px;
+		border-radius: 10px;
 	}
 
 	&__flex-left {
 		margin-left: 0px;
-		// display: flex;
-		// justify-content: space-between;
-	}
-
-	&__div {
 		margin-right: 50px;
 	}
-}
-
-.navbar:hover {
-	// background-color: rgb(207, 185, 151);
-	background-color: rgb(208, 198, 185);
-	// color: black;
 }

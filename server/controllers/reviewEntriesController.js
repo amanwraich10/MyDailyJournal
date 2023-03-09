@@ -5,14 +5,6 @@ const moment = require("moment");
 
 exports.index = (_req, res) => {
 	knex("entriesReview")
-		.select(
-			"id",
-			"date",
-			"Question_review_1",
-			"Answer_review_1",
-			"Question_review_2",
-			"Answer_review_2"
-		)
 		.then((entriesReview) => {
 			console.log(entriesReview);
 			res.status(200).json(entriesReview);
@@ -23,7 +15,7 @@ exports.index = (_req, res) => {
 };
 
 exports.singleRevEntry = (req, res) => {
-	console.log(req.params);
+	// console.log(req.params);
 	knex("entriesReview")
 		.where({ id: req.params.entryRevId })
 		.then((entry) => {
@@ -58,8 +50,17 @@ exports.addRevEntry = (req, res) => {
 };
 
 exports.updateEntryRev = (req, res) => {
+	const entryR = {
+		id: uuid(),
+		date: moment(new Date()).format("YYYY-MM-DD"),
+		Question_review_1:
+			"What is something you wish to have done differently?",
+		Answer_review_1: req.body.Answer_review_1,
+		Question_review_2: "What did you learn today?",
+		Answer_review_2: req.body.Answer_review_2,
+	};
 	knex("entriesReview")
-		.update(req.body)
+		.update(entryR)
 		.where({ id: req.params.entryRevId })
 		.then(() => {
 			res.status(200).send("update Review entry");

@@ -18,7 +18,7 @@ function MainPage(props) {
 		// const rb = requestBody.text;
 		// console.log(rb);
 		axios
-			.post("http://localhost:8082/entries/liked-quotes", requestBody)
+			.post("http://localhost:8082/quotes/liked-quotes", requestBody)
 			.then(alert("Liked Quote"));
 	}
 
@@ -97,8 +97,6 @@ function MainPage(props) {
 							>
 								LIKE
 							</button>
-
-							{/* <button onClick={ClickLikeButton}>LIKE</button> */}
 						</div>
 						<div className="mainpage__journal">
 							<div className="mainpage__card">
@@ -139,9 +137,10 @@ function MainPage(props) {
 									</button>
 								</form>
 								<form className="mainpage__second">
-									<h2 className="mainpage__review">
+									{/* <h2 className="mainpage__review">
+										{" "}
 										Review of the day
-									</h2>
+									</h2> */}
 									<p className="mainpage__questions">
 										What is something you wish to have done
 										differently?

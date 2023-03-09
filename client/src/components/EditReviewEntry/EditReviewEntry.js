@@ -38,7 +38,7 @@ function EditReviewEntry() {
 			Question_review_2: entry.Question_review_2,
 			Answer_review_2: entry.Answer_review_2,
 		};
-		// console.log(toSubmitData);
+		console.log(toSubmitData);
 
 		axios
 			.put(`http://localhost:8082/entriesrev/${entryRevId}`, toSubmitData)

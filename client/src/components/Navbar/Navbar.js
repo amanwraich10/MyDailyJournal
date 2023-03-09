@@ -5,33 +5,33 @@ function Navbar() {
 	return (
 		<>
 			<div className="navbar">
+				<Link to={"/"} className="navbar__heading">
+					My Daily Journal
+				</Link>
 				<div className="navbar__flex-left">
 					<NavLink to={"/"} className="navbar__sub-heading">
-						Today's Entry
+						HOME
 					</NavLink>
 					<NavLink
 						to={"/all-entries"}
 						className="navbar__sub-heading"
 					>
-						All Entries
+						ENTRIES
 					</NavLink>
 
 					<NavLink
 						to={"/liked-quotes"}
 						className="navbar__sub-heading"
 					>
-						Liked Quotes
+						QUOTES
 					</NavLink>
-				</div>
 
-				<Link to={"/"} className="navbar__heading">
-					My Daily Journal
-				</Link>
-				<div className="navbar__div">
 					<NavLink to={"/calender"} className="navbar__sub-heading">
-						Calender
+						CALENDAR
 					</NavLink>
-					<NavLink className="navbar__sub-heading">Account</NavLink>
+					<NavLink to={"/welcome"} className="navbar__sub-heading">
+						ACCOUNT
+					</NavLink>
 				</div>
 			</div>
 		</>

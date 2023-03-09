@@ -1,19 +1,58 @@
 @import url(../../App.scss);
 
 .allentries {
-	&__heading {
+	&__date {
 		// width: 100px;
 		font-family: NanumExtraBold;
-		font-size: 40px;
+		font-size: 30px;
 		// margin: auto;
 		text-align: center;
+		border-bottom: 2px solid rgb(47, 17, 17);
 	}
 
 	&__div {
-		width: 350px;
-		padding: 20px;
-		background-color: rgb(208, 198, 185);
-		border: 3px black solid;
+		// width: 350px;
+		// padding: 20px;
+		// background-color: rgb(208, 198, 185);
+		// border: 3px black solid;
 		// margin: 50px auto;
+		font-family: NanumBold;
+		// border: 2px solid rgb(47, 17, 17);
+		padding: 20px;
+		border-radius: 20px;
+		box-shadow: 5px 5px 5px rgb(97, 92, 92);
+		width: 700px;
+		// margin: 100px auto;
+		text-align: center;
+		background-color: rgb(208, 198, 185);
+	}
+
+	&__flex {
+		display: flex;
+	}
+
+	&__edit-button {
+		font-family: NanumExtraBold;
+
+		font-size: 25px;
+		display: block;
+		margin: auto;
+		color: black;
+		width: 100px;
+		// margin: 20px 530px;
+		// margin-left: 675px;
+		// margin-bottom: 20px;
+		background-color: rgb(208, 198, 185);
+		box-shadow: 5px 5px 5px rgb(97, 92, 92);
+		border: 2px solid rgb(47, 17, 17);
+		padding: 10px 20px 10px 20px;
+		border-radius: 10px;
+		text-decoration: none;
+	}
+
+	&__question,
+	&__answer {
+		text-align: center;
+		font-size: 25px;
 	}
 }

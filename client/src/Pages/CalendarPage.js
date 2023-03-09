@@ -2,6 +2,8 @@ import Navbar from "../components/Navbar/Navbar";
 import Calendar from "react-calendar";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import "../components/MainPage/MainPage.scss";
+import "../components/AllEntry/AllEntry.scss";
 
 function CalendarPage() {
 	const [dates, setDate] = useState(new Date());
@@ -38,14 +40,28 @@ function CalendarPage() {
 
 				if (final_Entry_Date === clicked_Date) {
 					return (
-						<div key={entry.id}>
-							<p>{final_Entry_Date}</p>
-							<p>{entry.Question_1}</p>
-							<p>{entry.Answer_1}</p>
-							<p>{entry.Question_2}</p>
-							<p>{entry.Answer_2}</p>
-							<p>{entry.Question_3}</p>
-							<p>{entry.Answer_3}</p>
+						<div key={entry.id} className="mainpage__first">
+							<p className="allentries__date">
+								{final_Entry_Date}
+							</p>
+							<p className="mainpage__questions">
+								{entry.Question_1}
+							</p>
+							<p className="allentries__answer">
+								{entry.Answer_1}
+							</p>
+							<p className="mainpage__questions">
+								{entry.Question_2}
+							</p>
+							<p className="allentries__answer">
+								{entry.Answer_2}
+							</p>
+							<p className="mainpage__questions">
+								{entry.Question_3}
+							</p>
+							<p className="allentries__answer">
+								{entry.Answer_3}
+							</p>
 						</div>
 					);
 				} else {
@@ -53,7 +69,9 @@ function CalendarPage() {
 						noEntriesFound = true;
 						return (
 							<div key={entry.id}>
-								<p>no</p>
+								<p className="calender__text">
+									No Entries for this Morning
+								</p>
 							</div>
 						);
 					}
@@ -66,12 +84,22 @@ function CalendarPage() {
 
 				if (final_Entry_Date === clicked_Date) {
 					return (
-						<div key={entry.id}>
-							<p>{final_Entry_Date}</p>
-							<p>{entry.Question_review_1}</p>
-							<p>{entry.Answer_review_1}</p>
-							<p>{entry.Question_review_2}</p>
-							<p>{entry.Answer_review_2}</p>
+						<div key={entry.id} className="mainpage__first">
+							<p className="allentries__date">
+								{final_Entry_Date}
+							</p>
+							<p className="mainpage__questions">
+								{entry.Question_review_1}
+							</p>
+							<p className="allentries__answer">
+								{entry.Answer_review_1}
+							</p>
+							<p className="mainpage__questions">
+								{entry.Question_review_2}
+							</p>
+							<p className="allentries__answer">
+								{entry.Answer_review_2}
+							</p>
 						</div>
 					);
 				} else {
@@ -79,7 +107,9 @@ function CalendarPage() {
 						noRevEntriesFound = true;
 						return (
 							<div key={entry.id}>
-								<p>no</p>
+								<p className="calender__text">
+									No Review Entries for this Evening
+								</p>
 							</div>
 						);
 					}

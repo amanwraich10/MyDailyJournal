@@ -51,7 +51,7 @@ exports.addEntry = (req, res) => {
 	knex("entries")
 		.insert(entry)
 		.then((newentries) => {
-			console.log(newentries[0]);
+			// console.log(newentries[0]);
 			res.status(201).json(newentries[0]);
 		})
 		.catch(() => {
@@ -75,7 +75,7 @@ exports.updateEntry = (req, res) => {
 };
 
 exports.deleteEntry = (req, res) => {
-	console.log("en", req.params.entryId);
+	// console.log("en", req.params.entryId);
 	knex("entries")
 		.del()
 		.where({ id: req.params.entryId })

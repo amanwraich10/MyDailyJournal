@@ -4,6 +4,7 @@ const uuid = require("uuid").v4;
 
 exports.index = (_req, res) => {
 	knex("quotes")
+		// .select("id", "user_id", "text")
 		.then((quotes) => {
 			res.status(200).json(quotes);
 		})
@@ -19,7 +20,7 @@ exports.addQuote = (req, res) => {
 		id: uuid(),
 		text: request_body.text,
 	};
-	console.log(quote);
+	// console.log(quote);
 
 	knex("quotes")
 		.insert(quote)

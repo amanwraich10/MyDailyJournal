@@ -10,23 +10,35 @@ function ReviewEntries(props) {
 				const entryDate = new Date(date);
 				return (
 					<div key={ent.id} className="allentries__div">
-						<p className="review">Review</p>
-						<p className="date">{entryDate.toDateString()}</p>
-						<p className="question">{ent.Question_review_1}</p>
-						<p className="answer">{ent.Answer_review_1}</p>
-						<p className="question">{ent.Question_review_2}</p>
-						<p className="answer">{ent.Answer_review_2}</p>
-
-						<Link to={`/edit-review-entry/${ent.id}`}>
-							<button className="entries__like-button ">
-								edit
-							</button>
-						</Link>
-						<Link to={`/delete-review-entry/${ent.id}`}>
-							<button className="entries__like-button ">
-								Delete
-							</button>
-						</Link>
+						<p className="allentries__date">
+							Review of {entryDate.toDateString()}
+						</p>
+						<p className="allentries__question">
+							{ent.Question_review_1}
+						</p>
+						<p className="allentries__answer">
+							{ent.Answer_review_1}
+						</p>
+						<p className="allentries__question">
+							{ent.Question_review_2}
+						</p>
+						<p className="allentries__answer">
+							{ent.Answer_review_2}
+						</p>
+						<div className="allentries__flex">
+							<Link
+								to={`/edit-review-entry/${ent.id}`}
+								className="allentries__edit-button"
+							>
+								EDIT
+							</Link>
+							<Link
+								to={`/delete-review-entry/${ent.id}`}
+								className="allentries__edit-button"
+							>
+								DELETE
+							</Link>
+						</div>
 					</div>
 				);
 			})}
