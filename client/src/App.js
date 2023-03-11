@@ -22,14 +22,35 @@ function App() {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	const [isLoginError, setIsLoginError] = useState(false);
 	const [errorMessage, setErrorMessage] = useState("");
-	const [users, setUsers] = useState(null);
+	// const [users, setUsers] = useState(null);
 	const [isLoading, setIsLoading] = useState(true);
 	const [userInfo, setUserInfo] = useState([]);
 	const [userDetails, setUserDetails] = useState("");
+
+	// // __________________????////
+	const [users, setUsers] = useState([]);
+	const [singleUser, setSingleUser] = useState("");
 	const { userId } = useParams();
 
+	// const getUser = async () => {
+	// 	try {
+	// 		const url = `${process.env.REACT_APP_API_URL}/auth/login/success`;
+	// 		const { data } = await axios.get(url, { withCredentials: true });
+	// 		setUser(data.user._json);
+	// 	} catch (err) {
+	// 		console.log(err);
+	// 	}
+	// };
+
+	// useEffect(() => {
+	// 	getUser();
+	// }, []);
+	// // __________________????////
+
+	// console.log(id);
+
 	useEffect(() => {
-		const token = sessionStorage.getItem("JWT_token");
+		const token = sessionStorage.getItem("authToken");
 
 		if (!token) {
 			return;
@@ -42,10 +63,18 @@ function App() {
 				},
 			})
 			.then((response) => {
-				console.log(response.data);
+				console.log(response);
+				setSingleUser(response.data);
+				// setUser(response.data.us.id);
 				setIsLoading(false);
 				setUserInfo(response.data);
 			});
+	}, []);
+
+	useEffect(() => {
+		axios.get("http://localhost:8082/users").then((response) => {
+			setUsers(response.data);
+		});
 	}, []);
 
 	const handleSignup = (e) => {
@@ -58,10 +87,10 @@ function App() {
 				password: e.target.password.value,
 			})
 			.then((res) => {
-				// console.log(res.config.data);
-
+				const d = JSON.parse(res.config.data);
+				// console.log(d);
+				setUserDetails(d);
 				setIsSignedUp(true);
-				// setUserDetails()
 			})
 			.catch((err) => {
 				console.log(err);
@@ -70,10 +99,6 @@ function App() {
 
 	const handleLogin = (e) => {
 		e.preventDefault();
-		// const userLogIn = {
-		// 	username: e.target.username.value,
-		// 	password: e.target.password.value,
-		// };
 
 		axios
 			.post("http://localhost:8082/login", {
@@ -81,41 +106,33 @@ function App() {
 				password: e.target.password.value,
 			})
 			.then((response) => {
-				// console.log(response.data);
-				setUserDetails(response.data.password);
-				sessionStorage.setItem("JWT_token", response.data.token);
+				console.log(response);
+				// setUserDetails(response.data.password);
+				sessionStorage.authToken = response.data.token;
 				setIsLoggedIn(true);
 				setIsLoginError(false);
 				setErrorMessage("");
 			})
 			.catch((error) => {
 				setIsLoginError(true);
-				console.log(error);
 				// setErrorMessage(error.response.data.error.message);
 			});
 	};
-
-	useEffect(() => {
-		axios.get(`http://localhost:8082/users`).then((res) => {
-			// console.log(res.data);
-			setUsers(res.data);
-			// console.log(id);
-		});
-	}, []);
 
 	return (
 		<>
 			<BrowserRouter>
 				<Routes>
 					<Route path="/welcome" element={<StartPage />} />
-					{/* <Route
+					<Route
 						path="/login"
 						element={
 							isLoggedIn ? (
-								<Navigate to="/:userId" />
+								<Navigate to="/" />
 							) : (
 								<LoginPage
-									// users={users}
+									singleUser={singleUser}
+									users={users}
 									userDetails={userDetails}
 									userInfo={userInfo}
 									isLoggedIn={isLoggedIn}
@@ -125,8 +142,8 @@ function App() {
 								/>
 							)
 						}
-					/> */}
-					{/* <Route
+					/>
+					<Route
 						path="/signup"
 						element={
 							isSignedUp ? (
@@ -138,13 +155,10 @@ function App() {
 								/>
 							)
 						}
-					/> */}
+					/>
 					<Route
-						// path="/:userId"
 						path="/"
-						element={
-							<Home users={users} userDetails={userDetails} />
-						}
+						element={<Home userDetails={userDetails} />}
 					/>
 					<Route path="/liked-quotes" element={<Quotes />} />
 					<Route path="/all-entries" element={<Entries />} />

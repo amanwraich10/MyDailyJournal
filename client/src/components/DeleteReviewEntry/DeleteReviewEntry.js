@@ -4,7 +4,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-
+import "./DeleteReviewEntry.scss";
+//
 function DeleteReviewEntry(props) {
 	let navigate = useNavigate();
 	const idToDelete = props.delRevEntry;
@@ -17,16 +18,19 @@ function DeleteReviewEntry(props) {
 	return (
 		<>
 			<Navbar />
-			<p>Are you sure you want to delete this Entry?</p>
+			<p className="likedquotes__heading">
+				Are you sure you want to delete this Entry?
+			</p>
 			<button
+				className="editentries__delete-button"
 				onClick={() => {
 					deleteRevEnt(idToDelete);
 				}}
 			>
 				YES
 			</button>
-			<Link to="/all-entries">
-				<button>NO</button>
+			<Link className="editentries__cancl-button " to="/all-entries">
+				NO
 			</Link>
 		</>
 	);

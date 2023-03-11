@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import "./EditEntry.scss";
 
 function EditEntry() {
 	let navigate = useNavigate();
@@ -76,36 +77,41 @@ function EditEntry() {
 	return (
 		<>
 			<Navbar />
+			<p className="likedquotes__heading">Edit this entry?</p>
 			<form className="mainpage__first" onSubmit={(e) => onSubmit(e)}>
-				<p className="question">
+				<p className="mainpage__questions">
 					What is the most important task for today?
 				</p>
 				<input
 					name="Answer_1"
+					className="mainpage__input"
 					onChange={(e) => onInputChange(e)}
 				></input>
 
-				<p className="question">
+				<p className="mainpage__questions">
 					What are you looking forward to today?
 				</p>
 				<input
 					name="Answer_2"
+					className="mainpage__input"
 					onChange={(e) => onInputChange(e)}
 				></input>
 
-				<p className="question">Daily Affirmations</p>
+				<p className="mainpage__questions">Daily Affirmations</p>
 				<input
 					name="Answer_3"
+					className="mainpage__input"
 					onChange={(e) => onInputChange(e)}
 				></input>
 				<div>
-					<Link to="/all-entries">
-						<button className="entries__like-button ">
-							CANCEL
-						</button>
+					<Link
+						to="/all-entries"
+						className="editentries__cancel-button"
+					>
+						CANCEL
 					</Link>
 
-					<button className="entries__like-button ">SAVE</button>
+					<button className="editentries__cancel-button">SAVE</button>
 				</div>
 			</form>
 		</>

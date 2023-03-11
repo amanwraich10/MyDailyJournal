@@ -15,11 +15,7 @@ function Home() {
 			setQuote(res.data.contents.quotes);
 		});
 	}, []);
-	// useEffect(() => {
-	// 	axios.get("http://localhost:8082/users").then((res) => {
-	// 		console.log(res.data);
-	// 	});
-	// }, []);
+	const [id, setId] = useState("");
 
 	return (
 		<>

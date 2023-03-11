@@ -72,24 +72,31 @@ function EditReviewEntry() {
 	return (
 		<>
 			<Navbar />
+			<p className="likedquotes__heading">Edit this review entry?</p>
 			<form className="mainpage__first" onSubmit={(e) => onSubmit(e)}>
-				<p>What is something you wish to have done differently?</p>
+				<p className="mainpage__questions">
+					What is something you wish to have done differently?
+				</p>
 				<input
 					name="Answer_review_1"
+					className="mainpage__input"
 					onChange={(e) => onInputChange(e)}
 				></input>
 
-				<p>What did you learn today?"</p>
+				<p className="mainpage__questions">
+					What did you learn today?"
+				</p>
 				<input
 					name="Answer_review_2"
+					className="mainpage__input"
 					onChange={(e) => onInputChange(e)}
 				></input>
 
-				<Link to="/all-entries">
-					<button>Cancel</button>
+				<Link to="/all-entries" className="editentries__cancel-button">
+					CANCEL
 				</Link>
 
-				<button>SAVE</button>
+				<button className="editentries__cancel-button">SAVE</button>
 			</form>
 		</>
 	);

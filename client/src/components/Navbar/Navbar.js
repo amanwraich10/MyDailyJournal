@@ -1,7 +1,7 @@
 import "../Navbar/Navbar.scss";
 import { NavLink, Link } from "react-router-dom";
 
-function Navbar() {
+function Navbar(props) {
 	return (
 		<>
 			<div className="navbar">
@@ -29,8 +29,8 @@ function Navbar() {
 					<NavLink to={"/calender"} className="navbar__sub-heading">
 						CALENDAR
 					</NavLink>
-					<NavLink to={"/welcome"} className="navbar__sub-heading">
-						ACCOUNT
+					<NavLink to={"/login"} className="navbar__sub-heading">
+						LOGOUT
 					</NavLink>
 				</div>
 			</div>

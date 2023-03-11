@@ -1,0 +1,17 @@
+@import url(../../App.scss);
+
+.editentries__cancel-button {
+	font-family: NanumExtraBold;
+	font-size: 25px;
+	display: block;
+	color: black;
+	width: 120px;
+	background-color: rgb(208, 198, 185);
+	box-shadow: 5px 5px 5px rgb(97, 92, 92);
+	border: 2px solid rgb(47, 17, 17);
+	padding: 10px 20px 10px 20px;
+	border-radius: 10px;
+	display: inline;
+	text-decoration: none;
+	margin: 20px 50px 10px 50px;
+}
