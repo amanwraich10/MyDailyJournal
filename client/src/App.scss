@@ -17,14 +17,11 @@
 }
 
 body {
-	// margin-bottom: -90px;
 	font-family: Nanum;
 	margin: 0px;
 	background-image: url(./Assets/images/patrick-langwallner-3pR7d-tIRx8-unsplash.jpg);
 	background-position: center;
 	background-size: cover;
-
-	// opacity: 0.5;
 }
 
 .div {
@@ -33,10 +30,7 @@ body {
 }
 
 .react-calendar {
-	// width: 950px;
 	margin: 50px auto;
-	// height: 800px;
-	// width: 80%;
 	max-width: 70%;
 	background-color: rgb(208, 198, 185);
 	border: 2px solid rgb(47, 17, 17);
@@ -56,7 +50,6 @@ body {
 .react-calendar button {
 	margin: 0;
 	border: 0;
-	// width: 10px;
 	border-radius: 10px;
 	outline: none;
 }

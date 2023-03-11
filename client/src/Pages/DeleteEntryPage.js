@@ -6,10 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 function DeleteEntryPage() {
 	const [delEntry, setDelEntry] = useState(null);
-
-	// let navigate = useNavigate();
 	let { entryId } = useParams();
-	// console.log(entryId);
 	useEffect(() => {
 		axios.get(`http://localhost:8082/entries/${entryId}`).then((res) => {
 			setDelEntry(res.data[0].id);

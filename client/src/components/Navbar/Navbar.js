@@ -1,7 +1,7 @@
 import "../Navbar/Navbar.scss";
 import { NavLink, Link } from "react-router-dom";
 
-function Navbar(props) {
+function Navbar() {
 	return (
 		<>
 			<div className="navbar">

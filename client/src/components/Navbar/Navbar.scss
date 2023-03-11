@@ -10,23 +10,15 @@
 
 	&__heading {
 		text-decoration: none;
-		// color: Black;
 		color: rgb(47, 17, 17);
 		font-family: NanumExtraBold;
-		// margin: auto;
-		// text-align: center;
-		// margin-left: -180px;
 		font-size: 30px;
 		position: absolute;
-		// // left: 200px;
 		left: 50px;
-
-		// position: fixed;
 	}
 
 	&__sub-heading {
 		text-decoration: none;
-		// color: Black;
 		color: rgb(129, 91, 91);
 		font-family: NanumBold;
 		font-size: 18px;
@@ -34,7 +26,6 @@
 		top: 10px;
 		margin-left: 50px;
 		transition: 0.2s all;
-		// transition: 0.5s ease;
 	}
 
 	&__sub-heading:hover {
@@ -46,12 +37,7 @@
 	}
 	&__sub-heading.active {
 		color: rgb(47, 17, 17);
-
 		box-shadow: 5px 5px 5px rgb(97, 92, 92);
-		// box-shadow: 5px 5px 5px rgb(93, 88, 88);
-
-		// box-shadow: 5px 5px 5px rgb(47, 17, 17);
-
 		border: 2px solid rgb(47, 17, 17);
 		padding: 10px;
 		border-radius: 10px;

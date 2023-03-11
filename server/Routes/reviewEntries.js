@@ -4,7 +4,6 @@ const reviewEntriesController = require("../controllers/reviewEntriesController"
 router.route("/").get(reviewEntriesController.index);
 
 router
-
 	.route("/:entryRevId")
 	.get(reviewEntriesController.singleRevEntry)
 	.put(reviewEntriesController.updateEntryRev)

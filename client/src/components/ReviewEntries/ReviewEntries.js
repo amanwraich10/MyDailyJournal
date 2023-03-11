@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
 import "../ReviewEntries/ReviewEntries.scss";
 function ReviewEntries(props) {
-	// console.log(props);
 	return (
 		<>
-			{/* <p>Review</p> */}
 			{props.entriesRev?.map((ent) => {
 				const date = ent.date;
 				const entryDate = new Date(date);

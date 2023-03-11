@@ -37,7 +37,6 @@ function CalendarPage() {
 				const d = entry.date;
 				const fd = new Date(d);
 				const final_Entry_Date = fd.toDateString();
-				// let noEntriesFound = false;
 
 				if (final_Entry_Date === clicked_Date) {
 					return (

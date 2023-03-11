@@ -7,16 +7,11 @@ import { useNavigate } from "react-router-dom";
 function MainPage(props) {
 	const [entry, setEntry] = useState({});
 
-	// PROBLEM - issue with accessing text
-
 	function ClickLikeButton(e) {
 		e.preventDefault();
 
 		let text = document.querySelector(".mainpage__quote").innerText;
 		const requestBody = { text: text };
-
-		// const rb = requestBody.text;
-		// console.log(rb);
 		axios
 			.post("http://localhost:8082/quotes/liked-quotes", requestBody)
 			.then(alert("Liked Quote"));
@@ -137,10 +132,6 @@ function MainPage(props) {
 									</button>
 								</form>
 								<form className="mainpage__second">
-									{/* <h2 className="mainpage__review">
-										{" "}
-										Review of the day
-									</h2> */}
 									<p className="mainpage__questions">
 										What is something you wish to have done
 										differently?

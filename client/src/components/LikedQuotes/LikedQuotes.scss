@@ -3,8 +3,6 @@
 .likedquotes {
 	&__heading {
 		font-size: 40px;
-		// color: white;
-		// margin-left: 520px;
 		text-align: center;
 		border-bottom: 2px solid rgb(47, 17, 17);
 		width: 800px;
@@ -12,12 +10,8 @@
 	}
 
 	&__div {
-		// height: 200px;
 		width: 800px;
-		// padding: 2px auto;
 		background-color: rgb(208, 198, 185);
-		// border: 3px black solid;
-		// border-bottom: 2px solid black;
 		margin: 40px auto;
 		border-radius: 10px;
 		box-shadow: 5px 5px 5px rgb(97, 92, 92);
@@ -27,14 +21,3 @@
 		padding: 20px 0px 20px 30px;
 	}
 }
-
-// .entries__like-button {
-// 	height: 50px;
-// 	width: 140px;
-// 	font-family: NanumExtraBold;
-// 	font-size: 30px;
-// 	margin-left: 25px;
-// 	margin-top: 20px;
-// 	// margin-bottom: 20px;
-// 	background-color: rgb(208, 198, 185);
-// }

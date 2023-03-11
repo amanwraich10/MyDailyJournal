@@ -1,10 +1,8 @@
 const knex = require("knex")(require("../knexfile"));
-// const uuid = require("uuid").v4;
 
 exports.index = (req, res) => {
 	knex("users")
 		.then((users) => {
-			// console.log(users);
 			res.status(200).json(users);
 		})
 		.catch((err) => {

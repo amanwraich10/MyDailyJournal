@@ -8,7 +8,6 @@ import { useNavigate } from "react-router-dom";
 function EditReviewEntry() {
 	let navigate = useNavigate();
 	let { entryRevId } = useParams();
-	// console.log(entryId);
 	const [entry, setEntry] = useState({
 		date: "",
 		Question_review_1:
@@ -19,7 +18,6 @@ function EditReviewEntry() {
 		Answer_review_2: "",
 	});
 	const onInputChange = (e) => {
-		// console.log(e);
 		setEntry({ ...entry, [e.target.name]: e.target.value });
 	};
 
@@ -29,8 +27,6 @@ function EditReviewEntry() {
 
 	const onSubmit = (e) => {
 		e.preventDefault();
-
-		//add both inputs together
 		const toSubmitData = {
 			date: entry.date,
 			Question_review_1: entry.Question_review_1,
@@ -43,15 +39,11 @@ function EditReviewEntry() {
 		axios
 			.put(`http://localhost:8082/entriesrev/${entryRevId}`, toSubmitData)
 			.then((res) => {
-				// console.log(toSubmitData);
-				// console.log(res);
 				navigate("/all-entries");
 			})
 			.catch((err) => {
 				console.log(err);
 			});
-
-		// navigate("/all-entries");
 	};
 
 	const loadEntry = () => {
@@ -66,7 +58,6 @@ function EditReviewEntry() {
 					Answer_review_2: res.data.Answer_review_2,
 				};
 				setEntry(entryData);
-				// console.log(entry);
 			});
 	};
 	return (

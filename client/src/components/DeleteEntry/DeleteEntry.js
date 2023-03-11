@@ -18,7 +18,6 @@ function DeleteEntry(props) {
 				Are you sure you want to delete this Entry?
 			</p>
 			<div>
-				{/* <Link to="/all-entries"> */}
 				<button
 					className="editentries__delete-button"
 					onClick={() => {
@@ -27,7 +26,6 @@ function DeleteEntry(props) {
 				>
 					YES
 				</button>
-				{/* </Link> */}
 
 				<Link to="/all-entries" className="editentries__cancl-button ">
 					NO

@@ -6,16 +6,12 @@ import { useParams } from "react-router-dom";
 
 function Home() {
 	const [quote, setQuote] = useState(null);
-	// const [isLoading, setIsLoading] = useState(true);
-	const [userInfo, setUserInfo] = useState({});
-	const { userId } = useParams();
 
 	useEffect(() => {
 		axios.get("http://quotes.rest/qod").then((res) => {
 			setQuote(res.data.contents.quotes);
 		});
 	}, []);
-	const [id, setId] = useState("");
 
 	return (
 		<>

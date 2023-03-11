@@ -15,7 +15,6 @@ exports.index = (_req, res) => {
 };
 
 exports.singleRevEntry = (req, res) => {
-	// console.log(req.params);
 	knex("entriesReview")
 		.where({ id: req.params.entryRevId })
 		.then((entry) => {
@@ -27,7 +26,6 @@ exports.singleRevEntry = (req, res) => {
 };
 
 exports.addRevEntry = (req, res) => {
-	// console.log(req.body);
 	const entryR = {
 		id: uuid(),
 		date: moment(new Date()).format("YYYY-MM-DD"),
@@ -37,7 +35,6 @@ exports.addRevEntry = (req, res) => {
 		Question_review_2: "What did you learn today?",
 		Answer_review_2: req.body.Answer_review_2,
 	};
-	// console.log(entryR);
 	knex("entriesReview")
 		.insert(entryR)
 		.then((entryRev) => {

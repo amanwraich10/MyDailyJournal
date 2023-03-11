@@ -7,18 +7,12 @@ const quotesRoutes = require("./Routes/quotes");
 const entriesRoute = require("./Routes/entriess");
 const usersRoute = require("./Routes/users");
 const knex = require("knex")(require("./knexfile"));
-// const loginRoute = require("./Routes/login");
-// const signUpRoute = require("./Routes/signUp");
 require("dotenv").config();
 const { port, backend_url } = process.env;
 app.use(cors());
 app.use(express.json());
-
 const uuid = require("uuid").v4;
 app.use(express.urlencoded({ extended: false }));
-
-// app.use("/login", loginRoute);
-// app.use("signUp", signUpRoute);
 
 function authorize(req, res, next) {
 	const token = req.headers.authorization.split(" ")[1];
@@ -26,7 +20,6 @@ function authorize(req, res, next) {
 		if (err) {
 			res.status(403).json({ success: false, message: "No Token" });
 		} else {
-			// console.log(token);
 			req.user = decoded;
 		}
 		next();
@@ -47,7 +40,6 @@ app.post("/signup", (req, res) => {
 	knex("users")
 		.insert(user)
 		.then((newuser) => {
-			// console.log("new", newuser);
 			res.status(201).json(newuser[0]);
 		})
 		.catch(() => {
@@ -60,9 +52,6 @@ app.post("/signup", (req, res) => {
 app.post("/login", (req, res) => {
 	let username = req.body.username;
 	let password = req.body.password;
-
-	// console.log(dataUsers);
-
 	knex("users")
 		.select({
 			id: "id",

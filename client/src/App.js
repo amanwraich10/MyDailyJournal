@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import "./App.scss";
-
 import StartPage from "./Pages/StartPage";
 import Home from "./Pages/Home";
 import { useState, useEffect } from "react";
@@ -9,7 +8,6 @@ import axios from "axios";
 import Quotes from "./Pages/Quotes";
 import Entries from "./Pages/Entries";
 import CalendarPage from "./Pages/CalendarPage";
-// import "react-calendar/dist/Calendar.css";
 import EditEntryPage from "./Pages/EditEntryPage";
 import DeleteEntryPage from "./Pages/DeleteEntryPage";
 import EditReviewEntryPage from "./Pages/EditReviewEntryPage";
@@ -21,33 +19,9 @@ function App() {
 	const [isSignedUp, setIsSignedUp] = useState(false);
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	const [isLoginError, setIsLoginError] = useState(false);
-	const [errorMessage, setErrorMessage] = useState("");
-	// const [users, setUsers] = useState(null);
-	const [isLoading, setIsLoading] = useState(true);
-	const [userInfo, setUserInfo] = useState([]);
 	const [userDetails, setUserDetails] = useState("");
-
-	// // __________________????////
 	const [users, setUsers] = useState([]);
 	const [singleUser, setSingleUser] = useState("");
-	const { userId } = useParams();
-
-	// const getUser = async () => {
-	// 	try {
-	// 		const url = `${process.env.REACT_APP_API_URL}/auth/login/success`;
-	// 		const { data } = await axios.get(url, { withCredentials: true });
-	// 		setUser(data.user._json);
-	// 	} catch (err) {
-	// 		console.log(err);
-	// 	}
-	// };
-
-	// useEffect(() => {
-	// 	getUser();
-	// }, []);
-	// // __________________????////
-
-	// console.log(id);
 
 	useEffect(() => {
 		const token = sessionStorage.getItem("authToken");
@@ -65,9 +39,6 @@ function App() {
 			.then((response) => {
 				console.log(response);
 				setSingleUser(response.data);
-				// setUser(response.data.us.id);
-				setIsLoading(false);
-				setUserInfo(response.data);
 			});
 	}, []);
 
@@ -88,7 +59,6 @@ function App() {
 			})
 			.then((res) => {
 				const d = JSON.parse(res.config.data);
-				// console.log(d);
 				setUserDetails(d);
 				setIsSignedUp(true);
 			})
@@ -106,16 +76,12 @@ function App() {
 				password: e.target.password.value,
 			})
 			.then((response) => {
-				console.log(response);
-				// setUserDetails(response.data.password);
 				sessionStorage.authToken = response.data.token;
 				setIsLoggedIn(true);
 				setIsLoginError(false);
-				setErrorMessage("");
 			})
 			.catch((error) => {
 				setIsLoginError(true);
-				// setErrorMessage(error.response.data.error.message);
 			});
 	};
 
@@ -134,10 +100,8 @@ function App() {
 									singleUser={singleUser}
 									users={users}
 									userDetails={userDetails}
-									userInfo={userInfo}
 									isLoggedIn={isLoggedIn}
 									isLoginError={isLoginError}
-									errorMessage={errorMessage}
 									handleLogin={handleLogin}
 								/>
 							)

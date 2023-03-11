@@ -9,7 +9,6 @@ import "./EditEntry.scss";
 function EditEntry() {
 	let navigate = useNavigate();
 	let { entryId } = useParams();
-	// console.log(entryId);
 	const [entry, setEntry] = useState({
 		date: "",
 		Question_1: "What is the most important task for today?",
@@ -20,7 +19,6 @@ function EditEntry() {
 		Answer_3: "",
 	});
 	const onInputChange = (e) => {
-		// console.log(e);
 		setEntry({ ...entry, [e.target.name]: e.target.value });
 	};
 
@@ -31,7 +29,6 @@ function EditEntry() {
 	const onSubmit = (e) => {
 		e.preventDefault();
 
-		//add both inputs together
 		const toSubmitData = {
 			date: entry.date,
 			Question_1: entry.Question_1,
@@ -48,15 +45,11 @@ function EditEntry() {
 		axios
 			.put(`http://localhost:8082/entries/${entryId}`, toSubmitData)
 			.then((res) => {
-				// console.log(toSubmitData);
-				// console.log(res);
 				navigate("/all-entries");
 			})
 			.catch((err) => {
 				console.log(err);
 			});
-
-		// navigate("/all-entries");
 	};
 
 	const loadEntry = () => {
@@ -71,7 +64,6 @@ function EditEntry() {
 				Answer_3: res.data.Answer_3,
 			};
 			setEntry(entryData);
-			// console.log(entry);
 		});
 	};
 	return (

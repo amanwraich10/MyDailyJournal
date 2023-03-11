@@ -24,7 +24,6 @@ exports.index = (_req, res) => {
 };
 
 exports.singleEntry = (req, res) => {
-	// console.log(req.params.entryId);
 	knex("entries")
 		.where({ id: req.params.entryId })
 		.then((entry) => {
@@ -51,7 +50,6 @@ exports.addEntry = (req, res) => {
 	knex("entries")
 		.insert(entry)
 		.then((newentries) => {
-			// console.log(newentries[0]);
 			res.status(201).json(newentries[0]);
 		})
 		.catch(() => {
@@ -62,7 +60,6 @@ exports.addEntry = (req, res) => {
 };
 
 exports.updateEntry = (req, res) => {
-	// console.log(req.body);
 	knex("entries")
 		.update(req.body)
 		.where({ id: req.params.entryId })
@@ -75,7 +72,6 @@ exports.updateEntry = (req, res) => {
 };
 
 exports.deleteEntry = (req, res) => {
-	// console.log("en", req.params.entryId);
 	knex("entries")
 		.del()
 		.where({ id: req.params.entryId })

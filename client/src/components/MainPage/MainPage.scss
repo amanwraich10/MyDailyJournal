@@ -8,22 +8,18 @@
 		border-top: 2px solid rgb(47, 17, 17);
 		border-bottom: 2px solid rgb(47, 17, 17);
 		width: 80%;
-		// height: 20px;
 		margin: 100px auto;
 		padding: 0px;
 	}
 	&__date {
 		text-align: center;
 		font-family: NanumBold;
-		// padding-top: 50px;
 		margin: 20px auto;
 		font-size: 30px;
 	}
 
 	&__quote {
 		text-align: center;
-		// width: 1000px;
-		// margin: auto;
 		font-family: NanumExtraBold;
 		font-size: 35px;
 	}
@@ -35,13 +31,9 @@
 		font-family: NanumBold;
 	}
 	&__like-button {
-		// height: 50px;
-		// width: 100px;
 		font-family: NanumExtraBold;
 		font-size: 25px;
 		margin: 40px 530px;
-		// margin-left: 675px;
-		// margin-bottom: 20px;
 		background-color: rgb(208, 198, 185);
 		box-shadow: 5px 5px 5px rgb(97, 92, 92);
 		border: 2px solid rgb(47, 17, 17);
@@ -49,20 +41,8 @@
 		border-radius: 10px;
 	}
 
-	// &__card {
-	// 	display: flex;
-	// 	justify-content: space-evenly;
-	// }
-
-	// &__button {
-	// 	margin-left: 600px;
-	// 	height: 50px;
-	// 	width: 200px;
-	// }
-
 	&__first {
 		font-family: NanumBold;
-		// border: 2px solid rgb(47, 17, 17);
 		padding: 20px;
 		border-radius: 20px;
 		box-shadow: 5px 5px 5px rgb(97, 92, 92);
@@ -70,21 +50,17 @@
 		margin: 100px auto;
 		text-align: center;
 		background-color: rgb(208, 198, 185);
-		// perspective: 600px;
 	}
 
 	&__second {
 		font-family: NanumBold;
 		padding: 20px;
-		// border: 2px solid rgb(47, 17, 17);
 		border-radius: 20px;
 		box-shadow: 5px 5px 5px rgb(97, 92, 92);
-		// border: 3px black solid;
 		width: 700px;
 		margin: 100px auto;
 		text-align: center;
 		background-color: rgb(208, 198, 185);
-		// perspective: 600px;
 	}
 
 	&__questions {
@@ -92,15 +68,10 @@
 	}
 
 	&__save-button {
-		// height: 50px;
-		// width: 100px;
 		font-family: NanumExtraBold;
 		font-size: 25px;
 		display: block;
 		margin: 30px auto;
-		// margin: 20px 530px;
-		// margin-left: 675px;
-		// margin-bottom: 20px;
 		background-color: rgb(208, 198, 185);
 		box-shadow: 5px 5px 5px rgb(97, 92, 92);
 		border: 2px solid rgb(47, 17, 17);
@@ -110,17 +81,14 @@
 
 	&__review {
 		font-size: 40px;
-		// border-bottom: 2px solid black;
 	}
 
 	&__input {
 		border: none;
 		border-bottom: 2px solid black;
-		// background-color: rgb(231, 221, 211);
 		background-color: rgb(208, 198, 185);
 		width: 90%;
 		height: 40px;
-		// border-radius: 10px;
 		font-size: 15px;
 	}
 }
